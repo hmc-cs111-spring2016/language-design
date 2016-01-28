@@ -90,6 +90,7 @@ reading is:
    Marjan Mernik, Jan Heering, and Anthony M. Sloane
       + cite as: [Mernik _et al._, 2005]
       + Of most interest might be sections 1 and 2
+
 To emphasize, this reading is not required, but if you're really interested in
 an academic paper about DSLs, this is a good one. Like the Bloch paper, it's
 also part of the Association for Computing Machinery's digital
