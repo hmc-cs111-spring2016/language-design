@@ -86,7 +86,7 @@ Good responses (i.e., responses that receive a 3) will:
 Great responses (i.e., responses that receive a 4) will go a bit beyond, e.g.,
 by using (and citing) a source outside of the readings. One excellent additional
 reading is:
-   + [_When and How to Develop Domain-Specific Languages_][WhenAndHow]* by
+   + [_When and How to Develop Domain-Specific Languages_][WhenAndHow] by
    Marjan Mernik, Jan Heering, and Anthony M. Sloane
       + cite as: [Mernik _et al._, 2005]
       + Of most interest might be sections 1 and 2
