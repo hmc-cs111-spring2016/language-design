@@ -49,7 +49,7 @@ Here are the readings, in their recommended (but certainly not required!) order.
       understand this material better, or as extra supporting material. If you
       cite the talk, cite it as [Bloch, 2007] *and* provide [a link to the time at 
       which the material you cite occurs](http://www.wikihow.com/Link-to-a-Certain-Time-in-a-YouTube-Video).
-   1. [_An easy notation for grayscale colors_][WhatIsGray] by Lea Verou
+   1. [_An Easy Notation for Grayscale Colors_][WhatIsGray] by Lea Verou
       + cite as: [Verou, 2014]
       + An interesting post on how to choose a name for _one_ feature of an
       API. The comments are a good source of additional material.
