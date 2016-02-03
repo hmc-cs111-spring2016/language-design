@@ -17,6 +17,16 @@ For each quote, describe what it was about the quote that led you pick it.
 
 **Response**
 
+"Does this mean, then, that it is of no use to design? Not at all. But in stead of
+designing a thing, you need to design a way of doing. And this way of doing must make
+some choices now but leave other choices to a later time."
+
+"If we add hundreds of new things to the Java programming language, we will have
+a huge language, but it will take a long time to get there. But if we add just a few
+things—generic types, overloaded operators, and user defined types of light weight, for
+use as numbers and small vectors and such—that are designed to let users make and add
+things for their own use, I think we can go a long way, and much faster. We need to put
+tools for language growth in the hands of the users."
 
 
 ---
@@ -28,7 +38,10 @@ you know a poorly designed language? What are the symptoms?
 
 **Response**
 
-
+-- steele: language has to GROW
+-- steele: defines only what you need
+-- pavlus: intuitive to learn and read
+-- bloch: things are named correctly/easily
 
 ---
 
@@ -38,7 +51,9 @@ How do the themes of _Growing a Language_ relate to the lab we did this week?
 
 **Response**
 
-
+-- you introduce features/ideas as you need them
+-- you start in an existing framework and expand based on the use case you want
+-- poorly implemented but intuitive > well implemented and difficult to expand (APL example)
 
 ---
  
@@ -49,7 +64,7 @@ In what way is an API a language?
 
 **Response**
 
-
+JOSH
 
 ---
 
@@ -59,7 +74,7 @@ What does the post on grayscale tell us about the process of API design?
 
 **Response**
 
-
+JOSH
 
 ---
 
@@ -74,7 +89,7 @@ the commenters?
 
 **Response**
 
-
+JOSH
 
 ---
 
@@ -106,7 +121,14 @@ you do so? If not, why not?
 
 **Response**
 
-
+-- the closer you get to natural language, the more of an expectation you have to use it LIKE natural language
+	- in that way, it seems that you should be careful with how much natural language you want to use
+		- i would want to avoid associations with phrases and really common words
+			- counter: loop. we don't use loop often so its ok as a programming word
+-- i would be VERY careful using natural language in the design of a dsl
+	- wouldn't go further than a word that evokes a certain feeling or purpose
+	- don't want to create false expectations
+-- verbose method names etc are good programming practice, but the language itself shouldn't be projecting its expectations of natural language
 
 ---
 
