@@ -38,6 +38,25 @@ you know a poorly designed language? What are the symptoms?
 
 **Response**
 
+We differed slightly in our opinions on this topic, so both of us wrote a response.
+
+Milo:
+
+For the most part, I agree with Steele’s claim that a well-designed language will be implemented with growth in mind.  He argues that with the vast number of features that modern language users require, it is simply not possible to code comprehensive languages all at once [Steele, 1998, p. 5].  Thus, the key to good general purpose language design is to design for future growth.  When developers empower users to extend a language’s functionality to suit the community’s needs, a language could theoretically never become obsolete.  A specific symptom that Steele puts forth to gauge a language’s growth potential is whether or not “new words” (i.e. data types?) defined by users look like the primitive types implemented by the original developers, like they do in Lisp [Steele, 1998, p 5].  
+
+
+Steele also strongly believes that a good language will have strong library support, and a user can pick and choose the libraries they need much like one would shop at a shopping mall, “where there are not quite as many choices [as a bazaar] but most of the goods are well designed and sellers stand up and back what they sell.”   Having not too many choices is important, as it can be frustrating having to choose from multiple libraries that accomplish the same task.
+
+
+Interestingly, in the article about Quorum, Pavlus makes the implicit claim that well-designed languages should have very low learning curves.  This is not a statement that we agreed with, as there needs to be a balance between ease of use and long term productivity (more on this later).
+
+
+A poorly designed language is one that does not design for growth.  A symptom would be that the language requires intensive and very low-level hacking in order to make changes to the language that look natural.  Steele uses APL as an example, complaining that there was “no way for a user to grow the language in a smooth way” [Steele, 1998, p 6]. 
+
+
+
+Joshua:
+
 There are a lot of characteristics to a well-designed language. Although, I think pretty much all of them can be boiled down to one thing: productivity. Many of the properties of programming languages (or lack thereof) that Guy Steele supports would enhance user productivity, including starting them small and designing them to be able to be grown by their users. However, this may be quite unintuitive as many people would suspect that it would be easier to get more things done if you spent less time adding features. However, when a languages has too many features built in, it can become overwhelming to understand. Modern versions of C++ have become this way to some degree. There are so many advanced features now that C++ can do pretty much anything. Some of it looks like Python, some of it looks like C, and some of it is hard to decipher without already being familiar whith what the code is supposed to do. This actually hinders productivity because it becomes harder to maintain code as users are free to implement their programs in a wide variety of ways. One solution to this is to move functionality out of the core language and into standard libraries that are easily accessible. This way users can still access these features if they need them, but there is almost an implicit discouragement to do so if the libraries are not necessary. While C++ is pretty good about this, it can make it hard to include all but the simplest of external libraries. This has encouraged people to put all of their library code into a single, easy-to-include file rather than breaking it down into files and folders like they normally might. The ability to grow a language also contributes to productivity. By making it easy to extend a language's core functionality, programmers can better integrate libraries into their code and take advantage of the features they bring without having to sacrifice readability. Other features that Guy Steele mentioned, like generics and method overloading, also help to simplify and speed up the process of integrating more functionality into the language, therefore increasing programmer productivity.
 
 Many of Joshua Bloch's tips on how to create a well-designed API would also increase user productivity. If we made APIs "easy to use," "hard to misuse," and "self-documenting", programmers would save time on doing basic tasks, fixing bugs, and looking up method names and parameters. While there are plenty of other tips other than these three, if you look at his list, almost all of them will clearly increase user productivity in one way or another.
@@ -52,6 +71,10 @@ How do the themes of _Growing a Language_ relate to the lab we did this week?
 
 **Response**
 
+An overarching theme of Growing a Language was of limited development time.  Because developers cannot predict all the requirements that users of their language might have, some development choices must be left to a later time [Steele, 1998, p 9].  Trying to accomplish everything with a language out the gate would take so long that your language would likely become obsolete before it’s complete.  In our lab we were similarly constrained by time, as we had only thirty minutes to design our approach and implement whatever we could.  In order to achieve anything in such a short amount of time, an approach that we discussed was starting with small pieces and building up (the lab guidelines urged us to “use a limited set of tools”).  This relates to general language design where, simply put, one must “add to the small language to make a language that is more large” [Steele, 1998, p 4]. 
+
+
+On the theme of growth, however, Growing a Language and our lab differ.  Steele is adamant that “designing a language should be a plan for growth” [Steele, 1998, p7].  During our lab, however, rather than focusing on growth we were told to design with a specific user base in mind, and to think about what exactly that user base want to do with our DSL.  This difference in designing DSLs and general purpose programming languages makes a lot of sense.  While a DSL is meant to solve a specific problem present at the time of the making of the DSL, general purpose programming languages supposed to be able to solve unforeseeable problems that might arise in the future.  While DSLs can certainly grow to meet the changing needs of their users, growing in certain ways can put the DSL in danger of becoming general purpose.  An example is Context Free, which [incorporated loops](http://www.contextfreeart.org/mediawiki/index.php/Control_flow_elements) in a recent update.  By becoming more general purpose-y, DSLs lose some of their domain specificity, which according to Fowler is what makes them worthwhile in the first place [Fowler, 2010, p 28].
 
 
 ---
@@ -77,6 +100,13 @@ What does the post on grayscale tell us about the process of API design?
 
 **Response**
 
+First and foremost, the post and its comments show us that it’s extremely important to ask for feedback during the design process.  Almost every comment provided valuable feedback, either pointing out pros and cons of the suggested names or suggesting new names entirely.  The commenters were generally in agreement that they wanted the name that felt most intuitive (7 separate commenters even used the word “intuitive” in their posts).  However, they could not seem to agree on what that name was.  Out of the 756 respondents of the [poll]( https://docs.google.com/forms/d/1pp3RY-A4MAs7b-gmqFx6bKn52_G_WLoPFkV0vueiWP4/viewanalytics?usp=form_confirm), at least 9% voted for each of the five options, meaning that for every possible name, a sizable portion of users found it to be the most intuitive.  More importantly, the most popular choice, “rgb(x) and rgba(x, a),” received only ~47% of the vote, meaning that at least half of the users would not be fully satisfied no matter what name the developers choose.  A takeaway from this, I think, is that when designing an API you may come across situations where it’s impossible to please everyone.  When each possible name has a legitimate list of pros and cons, there won’t be one right solution.  Accepting this fact and not pandering to vocal minorities is important.
+
+
+One commenter put forth the print/photography terms “luma, lightness, value, brightness, intensity, or key” as possible names, and implied that users with backgrounds in print or photography might appreciate the constancy.  This brings up an interesting point, which is that the intuitiveness of a name will vary greatly depending on the user’s background.  This would help to explain the mixed poll results, and reinforces the fact that, as a developer of an API, it is important to always keep in mind the backgrounds of your users.
+
+
+The mixed responses bring to mind the advice of Joshua Bloch, who suggests that “if it’s hard to find good names, go back to the drawing board” [Bloch 2006].  One comment was in line with this advice and asked the developers, “Why the need for this function at all? Seems unnecessary.”
 
 
 ---
@@ -128,6 +158,12 @@ you do so? If not, why not?
 
 **Response**
 
+These experiences are not necessarily at odds with each other.  Based off the Quorum [documentation]( http://quorumlanguage.com/syntax.php) and the above quote about Applescript, a key difference between the two languages seems to be that, while both languages incorporate natural language, Applescript is loose in its syntax while Quorum is strict.  This is where Applescript goes wrong.  Cook states that it was the “syntactic variations and flexibility” that confused users, not the fact that the words themselves were taken from natural language.  The potential for confusion when loose syntax is allowed is summarized well in the following stackexchange [thread](http://programmers.stackexchange.com/questions/49623/should-programming-languages-be-strict-or-loose):
+“Every place where there's some ambiguity, the compiler needs to have some way to guess what the programmer really meant. Every time this happens, there's the chance that the programmer really meant something different, but didn't have the ambiguity-resolution rule down.”
+
+
+For this reason, I would definitely keep my syntax strict when designing a DSL.  I would, however, include natural language.  Every language I can think of incorporates natural language to some extent (“for” and “if” are words from natural language), and I can’t imagine why I’d make up gibberish words when English would work just fine.  I would favor terseness when choosing names and syntax for control structures (if my DSL includes them).  While a language like Quorum might be easier for complete beginners than languages like Java and Python, I think the long term productivity boost that terse syntax provides is worth a steeper learning curve.
+
 
 
 ---
@@ -138,6 +174,6 @@ Briefly describe how you split up the work for this assignment.
 
 **Response**
 
-
+After reading and taking notes on the articles separately, we met to discuss the questions and outline our responses.  Each of us then wrote up 4 responses each excluding this one (we both wrote a response for the second question).
 
 ---
